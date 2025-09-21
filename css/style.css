@@ -1,0 +1,37 @@
+body {
+    background-color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    line-height: 1.6;
+}
+#main-title {
+    color: blue;
+    font-size: 36px;
+}
+
+.section-title {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+a:hover {
+    color: red;
+}
+#wrapper {
+    width: 960px;
+    margin: 30px auto; /* 上下30px外边距，左右自动实现水平居中 */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+/*
+#main-content {
+    float: left;
+    width: 65%;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+}
+*/
