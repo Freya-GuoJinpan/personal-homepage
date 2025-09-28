@@ -10,30 +10,37 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">我的主页</a>
+        <button id="toggle-dark-mode" class="btn btn-outline-light">夜间模式</button>
     </div>
   </nav>
 <div class="container mt-4">
   <div class="row">
     <div id="main-content" class="col-md-8">
     <h2 class="section-title">个人简介</h2>
+    <div id="bio-content">
     <p>姓名：国锦盼<br>
        性别：女<br>
       专业：信息管理与信息系统<br>
       兴趣爱好：打羽毛球、旅游、阅读
     </p>
+    </div>
     <h2 class="section-title">项目经历</h2>
-    <ul>
-      无
-    </ul>
+    <ul class="list-group" id="project-list">
+      <li class="list-group-item">个人主页开发</li>
+      </ul>
+    <div class="mt-3"	>
+      <input type="text" id="new-project-input" class="form-control" placeholder="输入新的项目名称">
+      <button id="add-project-btn" class="btn btn-success mt-2">添加项目</button>
+    </div>
   </div>
   <div id="sidebar" class="col-md-4">
     <h2 class="section-title">技能清单</h2>
-    <ol>
-      python基础<br>
-      Git版本控制<br>
-      Oral English英语口语交流能力<br>
-      写作能力
-    </ol>
+    <ul class="list-group" id="skills-list">
+      <li class="list-group-item">python基础</li>
+      <li class="list-group-item">Git版本控制</li>
+      <li class="list-group-item">Oral English英语口语交流能力</li>
+      <li class="list-group-item">写作能力</li>
+    </ul>
     <h2 class="section-title">联系方式</h2>
     <p>
       电话：13780598310
@@ -51,7 +58,7 @@
      <li>项目二：无，无</li>
    </ul>
    <h2 class="section-titlessssssss">技能掌握</h2>
-   <ul class="list-group">
+   <ul class="list-group" id="skill-list">
      <li class="list-group-item">python基础</li>
      <li class="list-group-item">Git 版本控制</li>
      <li class="list-group-item">Oral English英语口语交流能力</li>
@@ -65,5 +72,7 @@
   <img src="我爱东大.jpg" alt="个人照片/喜欢的图片" width="200" height="200">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
- </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
  </html>
