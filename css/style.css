@@ -35,3 +35,11 @@ a:hover {
     width: 30%;
 }
 */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+body.dark-mode .container {
+    background-color: #444;
+    border-color: #555;
+}
