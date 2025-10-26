@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .layout-container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 50px auto auto;
+            grid-template-areas:
+                "header header"
+                "red-area green-area-top"
+                "red-area green-area-bottom";
+            gap: 0;
+            height: 500px; 
+        }
+        .header {
+            grid-area: header; 
+            background-color: #ffeb3b; 
+        }
+        .red-area {
+            grid-area: red-area;
+            background-color: #f44336; 
+        }
+
+        .green-area-top {
+            grid-area: green-area-top;
+            background-color: #4caf50; 
+        }
+
+        .green-area-bottom {
+            grid-area: green-area-bottom;
+            background-color: #4caf50; 
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-container">
+        <div class="header">东北大学</div>
+        <div class="red-area"></div>
+        <div class="green-area-top"></div>
+        <div class="green-area-bottom"></div>
+    </div>
+</body>
+</html>
