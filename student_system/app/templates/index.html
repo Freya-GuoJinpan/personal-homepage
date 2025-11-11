@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%import 'bootstrap/wtf.html' as wtf%}
+{%block title%} 学生信息管理系统 {%endblock%}
+{%block content%}
+<div class="container">
+</div>
+<div class="page-header">
+    <div class="text-right mb-3">
+        {%if current_user.is_authenticated%}
+        <span class="mr-3">当前用户：{{current_user.username}}</span>
+        <a href="{{url_for('auth.logout')}}" class="btn btn-danger btn-sm">退出登录</a>
+        {%endif%}
+    </div>
+    <h1>学生信息列表</h1>
+    <div style="margin:15px 0;">
+    <a href="{{url_for('main.index')}}" class="btn btn-primary btn-xs">显示所有学生</a>
+    {%for m in majors%}
+        <a href="{{url_for('main.filter_by_major',major_id=m.id)}}" class="btn btn-default btn-xs">{{m.major_name}}</a>
+    {%endfor%}
+</div>
+<div class="container">
+<h4>当前共有{{studs|length}}名学生</h4>
+<a class="btn btn-primary" href="{{url_for('main.new_stud')}}">新建学生</a>
+<div>
+    {%for stud in studs%}
+        <p>
+            学号：{{stud.id}} 
+            姓名：{{stud.studentname}}
+            {%if stud.major%}
+                <span>专业：{{stud.major.major_name}}</span>
+            {%else%}
+                <span>专业：未分配</span>
+            {%endif%}
+            {%if current_user.is_admin()%}
+            <a class="btn btn-danger" href="{{url_for('main.delete_stud',id=stud.id)}}">删除</a>
+            {%endif%}
+            <a class="btn btn-default" href="{{url_for('main.edit_stud',id=stud.id)}}">编辑</a>
+            
+        </p>
+    {%endfor%}
+</div>
+</div>
+{%endblock%}

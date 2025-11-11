@@ -1,0 +1,41 @@
+{%extends"bootstrap/base.html"%}
+{%block title%}用户登录-学生信息管理系统{%endblock%}
+{%block content%}
+<div class="container" style="margin-top: 80px;max-width: 500px;">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">用户登录</h3>
+        </div>
+        <div class="card-body">
+            {%for message in get_flashed_messages()%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {%endfor%}
+            <form method="POST" action="{{url_for('auth.login')}}">
+                {{form.hidden_tag()}}
+                <div class="form-group">
+                    {{form.username.label(class="form-control-label")}}
+                    {{form.username(class="form-control",placeholder="请输入用户名")}}
+                </div>
+        </div>
+        <div class="form-group">
+            {{form.password.label(class="form-control-label")}}
+            {{form.password(class="form-control",placeholder="请输入密码")}}
+        </div>
+        <div class="form-check">
+            {{form.remember_me(class="form-check-input")}}
+            {{form.remember_me.label(class="form-check-label")}}
+        </div>
+        {{form.submit(class_="btn btn-primary btn-block mt-4")}}
+        <div class="text-center mt-3">
+            <span>还没有账号？</span>
+            <a href="{{url_for('auth.register')}}" class="text-primary">注册账号</a>
+        </div>
+    </form>
+</div>
+{%endblock%}
+    
